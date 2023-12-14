@@ -16,7 +16,10 @@ const deleteTransaction = (transactionId) => {
 
 <template>
   <h3>History</h3>
-  <ul id="list" class="list">
+  <h5 v-if="transactions.length === 0" class="text-secondary">
+    No Transaction Found
+  </h5>
+  <ul v-else-if="transactions.length > 0" id="list" class="list">
     <li
       v-for="transaction in transactions"
       :key="transaction.id"
